@@ -3,7 +3,7 @@ const session = require('express-session')
 const hbs = require('hbs')
 const cookieParser = require('cookie-parser')
 const flash = require('connect-flash')
-const passport = require('./passport/setup');
+// const passport = require('./passport/setup');
 
 function setupExpressApp(app) {
     // use handlebars as the view engine (for templates) -- because there many other choices
@@ -28,9 +28,6 @@ function setupExpressApp(app) {
         res.locals.error_messages = req.flash('error_messages');
         next();
     })
-
-    app.use(passport.initialize());
-    app.use(passport.session())
 }
 
 module.exports = { setupExpressApp };
