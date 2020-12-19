@@ -6,8 +6,8 @@ const router = express.Router();
 let db = MongoUtil.getDB();
 
 router.get('/', async (req,res)=>{
-    let users = await db.collection('users').find().toArray();
-    res.send(users)
+    let scoreboard = await db.collection('scoreboard').find().toArray();
+    res.send(scoreboard)
 })
 
-module.exports = router; 
+module.exports = router;
