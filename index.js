@@ -1,7 +1,6 @@
 // EXPRESS AND OTHER SETUP
 const express = require('express');
 const { setupExpressApp } = require('./setUpExpress');
-// const { setupHBS } = require('./setupHBS');
 const MongoUtil = require('./MongoUtil.js');
 const cors = require('cors');
 
@@ -12,7 +11,6 @@ require('dotenv').config();
 // create the app
 const app = express();
 setupExpressApp(app);
-// setupHBS();
 
 async function main() {
     const MONGO_URL = process.env.MONGO_URL;
@@ -24,8 +22,8 @@ async function main() {
     // const tileRoutes = require('./routes/tileRoutes');
     // app.use('/tile', tileRoutes);
 
-    // const scoreboardRoutes = require('./routes/scoreboardRoutes');
-    // app.use('/scoreboard', scoreboardRoutes);
+    const scoreboardRoutes = require('./routes/scoreboardRoutes');
+    app.use('/scoreboard', scoreboardRoutes);
 
     app.use(cors());
 
