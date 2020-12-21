@@ -2,7 +2,7 @@
 const express = require('express');
 const { setupExpressApp } = require('./setUpExpress');
 const MongoUtil = require('./MongoUtil.js');
-const cors = require('cors');
+
 
 
 // allows us to inject into the environment (the OS) our environmental variabkes
@@ -25,7 +25,7 @@ async function main() {
     const scoreboardRoutes = require('./routes/scoreboardRoutes');
     app.use('/scoreboard', scoreboardRoutes);
 
-    app.use(cors());
+
 
 }
 
