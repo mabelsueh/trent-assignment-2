@@ -19,8 +19,8 @@ async function main() {
     const usersRoutes = require('./routes/usersRoutes');
     app.use('/users', usersRoutes);
 
-    // const tileRoutes = require('./routes/tileRoutes');
-    // app.use('/tile', tileRoutes);
+    const tileRoutes = require('./routes/tileRoutes');
+    app.use('/tile', tileRoutes);
 
     const scoreboardRoutes = require('./routes/scoreboardRoutes');
     app.use('/scoreboard', scoreboardRoutes);
