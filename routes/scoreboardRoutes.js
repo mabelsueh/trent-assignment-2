@@ -5,6 +5,7 @@ const router = express.Router();
 
 let db = MongoUtil.getDB();
 
+// goes to /scoreboard
 router.get('/', async (req,res)=>{
     let scoreboard = await db.collection('scoreboard').find().toArray();
     res.send(scoreboard)
