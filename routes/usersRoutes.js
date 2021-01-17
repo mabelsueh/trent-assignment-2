@@ -11,4 +11,13 @@ router.get('/', async (req,res)=>{
     res.send(users)
 })
 
+// for login check??
+router.get('/:username', async(req,res)=>{
+    let user = await db.collection('users').findOne({
+        'username':req.params.username
+    })
+    res.send(user)
+})
+
+
 module.exports = router; 
