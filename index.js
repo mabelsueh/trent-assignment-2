@@ -2,6 +2,7 @@
 const express = require('express');
 const { setupExpressApp } = require('./setUpExpress');
 const MongoUtil = require('./MongoUtil.js');
+const cors = require('cors');
 
 
 
@@ -25,7 +26,7 @@ async function main() {
     const scoreboardRoutes = require('./routes/scoreboardRoutes');
     app.use('/scoreboard', scoreboardRoutes);
 
-
+    app.use(cors())
 
 }
 
