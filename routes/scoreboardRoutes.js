@@ -10,16 +10,18 @@ router.get('/', async (req, res) => {
     let scoreboard = await db.collection('scoreboard').find().toArray();
     res.send(scoreboard)
 })
-
-router.get('/:', async (req, res) => {
+// returns single object (findOne)
+router.get('/:id', async (req, res) => {
     let scoreboard = await db.collection('scoreboard').findOne({
-        'username': req.params.username
+        _id: ObjectId(req.params.id)
     })
     res.send(scoreboard)
 })
 
 router.post('/create', async (req, res) => {
     let { username, score } = req.body;
+    console.log(username)
+    console.log(score)
     let results = await db.collection('scoreboard').insertOne({
         username, score
     })

@@ -13,6 +13,7 @@ function setupExpressApp(app) {
     app.use(express.static('public'))
     // allows express to data submitted via forms
     app.use(express.urlencoded({ extended: false }))
+    app.use(express.json());
 
 
     app.use(cookieParser("secret"))
